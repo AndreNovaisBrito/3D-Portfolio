@@ -13,7 +13,7 @@ const URANUS_DIAMETER = 4.01;
 const NEPTUNE_DIAMETER = 3.88;
 const PLUTO_DIAMETER = 0.18;
 const SIZE = 50;
-const planetXdistance = 0;
+const planetXdistance = 100;
 const planetYdistance = 100;
 const planetZdistance = -250;
 
@@ -71,14 +71,14 @@ function addStar(){
 const spaceTexture = new THREE.TextureLoader().load('space.png');
 scene.background = spaceTexture;
 
-// //Chess Piece
-// const chessTexture = new THREE.TextureLoader().load('chessKing.jpg');
-// const chess = new THREE.Mesh(
-//   new THREE.BoxGeometry(3,3,3), 
-//   new THREE.MeshBasicMaterial({map: chessTexture})
-//   );
-//   chess.position.set(0,0,-20);
-//   //scene.add(chess);
+//Chess Piece
+const chessTexture = new THREE.TextureLoader().load('chessKing.jpg');
+const chess = new THREE.Mesh(
+  new THREE.BoxGeometry(3,3,3), 
+  new THREE.MeshBasicMaterial({map: chessTexture})
+  );
+  chess.position.set(0,0,-20);
+  //scene.add(chess);
 
 //Mercury
   const mercuryTexture = new THREE.TextureLoader().load('2k_mercury.jpg');
@@ -86,7 +86,7 @@ scene.background = spaceTexture;
     new THREE.SphereGeometry(MERCURY_DIAMETER/2*SIZE, 32, 32),
     new THREE.MeshStandardMaterial({map: mercuryTexture})
   );
-  mercury.position.set(0, planetYdistance*(-4), planetZdistance);
+  mercury.position.set(planetXdistance*-4, planetYdistance*(-4), planetZdistance);
   scene.add(mercury);
 
   //Venus
@@ -95,7 +95,7 @@ scene.background = spaceTexture;
     new THREE.SphereGeometry(VENUS_DIAMETER/2*SIZE, 32, 32),
     new THREE.MeshStandardMaterial({map: venusTexture})
   );
-  venus.position.set(0, planetYdistance*(-3), planetZdistance);
+  venus.position.set(planetXdistance*-3, planetYdistance*(-3), planetZdistance);
   scene.add(venus);
 
   //Earth
@@ -105,7 +105,7 @@ scene.background = spaceTexture;
     new THREE.SphereGeometry(EARTH_DIAMETER/2*SIZE, 32, 32),
     new THREE.MeshStandardMaterial({map: earthTexture})
   );
-  earth.position.set(0, planetYdistance*(-2), planetZdistance);
+  earth.position.set(planetXdistance, planetYdistance*(-2), planetZdistance);
   scene.add(earth);
 
   //Moon
