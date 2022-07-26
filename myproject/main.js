@@ -78,7 +78,7 @@ const chess = new THREE.Mesh(
   new THREE.MeshBasicMaterial({map: chessTexture})
   );
   chess.position.set(0,0,-20);
-  //scene.add(chess);
+  scene.add(chess);
 
 //Mercury
   const mercuryTexture = new THREE.TextureLoader().load('2k_mercury.jpg');
@@ -189,7 +189,7 @@ function moveCamera(){
   moon.rotation.y += 0.075;
   moon.rotation.y += 0.05;
 
-  chess.rotation.y += 0.01;
+  chess.rotation.y += 0.11;
   chess.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
